@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Restricted Block by User Roles\n"
 "POT-Creation-Date: 2019-12-13 12:02+0900\n"
-"PO-Revision-Date: 2019-12-13 12:03+0900\n"
+"PO-Revision-Date: 2019-12-13 12:04+0900\n"
 "Last-Translator: \n"
 "Language-Team: LOOS WEB STUDIO\n"
 "Language: ja_JP\n"
@@ -60,7 +60,7 @@ msgstr "ユーザー制限ブロック"
 
 #. Plugin Name of the plugin/theme
 msgid "Restricted Block by User Roles"
-msgstr "ユーザーロールによる制限付きブロック"
+msgstr "Restricted Block by User Roles"
 
 #. Plugin URI of the plugin/theme
 msgid "https://wemo.tech/"
