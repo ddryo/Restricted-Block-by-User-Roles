@@ -1,0 +1,1 @@
+"po2json": "po2json languages/loos-restricted-block-ja.po languages/loos-restricted-block-ja-loos-rb-script.json -f jed"

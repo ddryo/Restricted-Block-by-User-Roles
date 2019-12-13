@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Restricted Block by User Roles\n"
+"POT-Creation-Date: 2019-12-13 00:40+0900\n"
+"PO-Revision-Date: 2019-12-13 00:44+0900\n"
+"Last-Translator: \n"
+"Language-Team: LOOS WEB STUDIO\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: restricted-block.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: restricted-block.php:61
+msgid "With restrictions"
+msgstr "制限付き"
+
+#: src/restricted-block/_panels.js:25
+msgid "User Roles"
+msgstr "権限グループ"
+
+#: src/restricted-block/_panels.js:26
+msgid "Roles to view this content"
+msgstr "このコンテンツを見ることのできる権限グループ"
+
+#: src/restricted-block/index.js:26
+msgid "Restricted Block"
+msgstr "ユーザー制限ブロック"
+
+#. Plugin Name of the plugin/theme
+msgid "Restricted Block by User Roles"
+msgstr "ユーザーロールによる制限付きブロック"
+
+#. Plugin URI of the plugin/theme
+msgid "https://wemo.tech/"
+msgstr "https://wemo.tech/"
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin can use a custom block to display content only to logged-in "
+"users belonging to the specified permission group."
+msgstr ""
+"指定した権限グループに属するログイン中のユーザーにのみコンテンツを表示する"
+"ためのカスタムブロックが利用できるプラグインです。"
+
+#. Author of the plugin/theme
+msgid "LOOS WEB STUDIO"
+msgstr "LOOS WEB STUDIO"
+
+#. Author URI of the plugin/theme
+msgid "https://loos-web-studio.com/"
+msgstr "https://loos-web-studio.com/"
+
+#~ msgid "hoge"
+#~ msgstr "ほげ"
+
+#~ msgid "Hello!"
+#~ msgstr "こんにちは！"
+
+#~ msgid "Goooood"
+#~ msgstr "わーい"

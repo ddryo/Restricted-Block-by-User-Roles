@@ -1,0 +1,24 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "po2json": "po2json languages/loos-restricted-block-ja.po languages/loos-restricted-block-ja-loos-rb-script.json -f jed"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^5.1.0",
+    "classnames": "^2.2.6",
+    "css-loader": "^3.3.2",
+    "node-sass": "^4.13.0",
+    "po2json": "^1.0.0-alpha",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.1"
+  },
+  "dependencies": {}
+}
