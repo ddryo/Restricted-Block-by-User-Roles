@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Restricted Block by User Roles\n"
-"POT-Creation-Date: 2019-12-13 00:40+0900\n"
-"PO-Revision-Date: 2019-12-13 00:44+0900\n"
+"POT-Creation-Date: 2019-12-13 12:02+0900\n"
+"PO-Revision-Date: 2019-12-13 12:03+0900\n"
 "Last-Translator: \n"
 "Language-Team: LOOS WEB STUDIO\n"
 "Language: ja_JP\n"
@@ -34,7 +34,27 @@ msgstr "権限グループ"
 msgid "Roles to view this content"
 msgstr "このコンテンツを見ることのできる権限グループ"
 
-#: src/restricted-block/index.js:26
+#: src/restricted-block/_panels.js:28
+msgid "administrator"
+msgstr "管理者"
+
+#: src/restricted-block/_panels.js:33
+msgid "editor"
+msgstr "編集者"
+
+#: src/restricted-block/_panels.js:38
+msgid "author"
+msgstr "投稿者"
+
+#: src/restricted-block/_panels.js:43
+msgid "contributor"
+msgstr "寄稿者"
+
+#: src/restricted-block/_panels.js:48
+msgid "subscriber"
+msgstr "購読者"
+
+#: src/restricted-block/index.js:31
 msgid "Restricted Block"
 msgstr "ユーザー制限ブロック"
 
