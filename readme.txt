@@ -15,6 +15,8 @@ This plug-in can use a custom block to display content only to logged-in users b
 
 This plug-in can use a custom block to display content only to logged-in users belonging to the specified permission group.
 
+The source code is available on [github](https://github.com/ddryo/Restricted-Block-by-User-Roles).
+
 = 使い方 =
 
 - ブロックインサーターの中に、「制限付き」というカテゴリーが追加されています。

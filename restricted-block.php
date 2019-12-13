@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Restricted Block by User Roles
-Plugin URI: https://wemo.tech/
+Plugin URI: https://github.com/ddryo/Restricted-Block-by-User-Roles
 Description: This plugin can use a custom block to display content only to logged-in users belonging to the specified permission group.
 Version: 1.0.0
 Author: LOOS WEB STUDIO
@@ -10,7 +10,7 @@ Author URI: https://loos-web-studio.com/
 License: GPL2
 Text Domain: loos-restricted-block
 
-/*  Copyright 2018 LOOS WEB STUDIO (email : info@loos-web-studio.com)
+/*  Copyright 2018 LOOS WEB STUDIO (email : loos.webstudio@gmail.com)
  
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
