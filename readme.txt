@@ -1,7 +1,7 @@
 === Restricted Block by User Roles ===
 Contributors: looswebstudio
 Donate link: https://wemo.tech/
-Tags: User Roles, Roles, block-editor, Guternberg, Restrict
+Tags: restrict, User Roles, Roles, block, editor, guternberg, gutenberg blocks
 Requires at least: 5.0
 Tested up to: 5.3
 Stable tag: 1.0.0
@@ -9,35 +9,34 @@ Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-This plug-in can use a custom block to display content only to logged-in users belonging to the specified permission group.
+This plugin can use a custom block to display content only to logged-in users belonging to the specified permission group.
 
 == Description ==
 
-This plug-in can use a custom block to display content only to logged-in users belonging to the specified permission group.
+This plugin can use a custom block to display content only to logged-in users belonging to the specified permission group.
 
 The source code is available on [github](https://github.com/ddryo/Restricted-Block-by-User-Roles).
 
-= 使い方 =
+= How to use =
 
-- ブロックインサーターの中に、「制限付き」というカテゴリーが追加されています。
-- その中に「ユーザー制限ブロック」という名前のカスタムブロックが用意されているはずです。
+- The category "Restricted" has been added to the Block Inserter.
+- There is a custom block named "Restricted Block".
+- Select "Restricted Block" to insert a block.
 
-= 動作しない？ =
+= If it doesn't work =
 
-当プラグインはPHPバージョン5.6以降、WordPress5.0以降でのみ動作します。
-ご使用のPHPバージョン または WordPressプラグインのバージョンをご確認ください。
+This plugin works only with PHP version 5.6 or later, WordPress 5.0 or later.
+Please check your PHP version or WordPress version.
 
 
 == Installation ==
 
+This plugin can be installed directly from your site.
 
-= 自動インストール =
-1. プラグインの検索フィールドより「Restricted Block by User Roles」と入力します。
-2. 当プラグインを見つけたら、"今すぐインストール"をクリックしてインストールし、有効化してください。
-
-= 手動インストール =
-1.「restricted-block-by-user-roles」フォルダ全体を /wp-content/plugins/ ディレクトリにアップロードします。
-2.「プラグイン」メニューからプラグインを有効化します。
+1. Log in and navigate to "Plugins" → "Add New".
+2. Type "Restricted Block by User Roles" into the Search and hit Enter.
+3. Locate the plugin in the list of search results and click "Install Now".
+4. Once installed, click the "Activate" link.
 
 
 == Screenshots ==
@@ -45,8 +44,10 @@ The source code is available on [github](https://github.com/ddryo/Restricted-Blo
 1. Restricted Block
 
 
-
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 =
+Edit radme.txt
+
+= 1.0.0 =
 Initial working version.
