@@ -1,31 +1,15 @@
 <?php
-
-/*
-Plugin Name: Restricted Block by User Roles
-Plugin URI: https://github.com/ddryo/Restricted-Block-by-User-Roles
-Description: This plugin can use a custom block to display content only to logged-in users belonging to the specified permission group.
-Version: 1.0.0
-Author: LOOS WEB STUDIO
-Author URI: https://loos-web-studio.com/
-License: GPL2
-Text Domain: loos-restricted-block
-
-/*  Copyright 2018 LOOS WEB STUDIO (email : loos.webstudio@gmail.com)
- 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as
-     published by the Free Software Foundation.
- 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
- 
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
+/**
+ * Plugin Name: Restricted Block by User Roles
+ * Plugin URI: https://github.com/ddryo/Restricted-Block-by-User-Roles
+ * Description: This plugin can use a custom block to display content only to logged-in users belonging to the specified permission group.
+ * Version: 1.0.0
+ * Author: LOOS WEB STUDIO
+ * Author URI: https://loos-web-studio.com/
+ * License: GPL2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: loos-restricted-block
+ */
 
 if( !defined( 'ABSPATH' ) ) exit;
 
