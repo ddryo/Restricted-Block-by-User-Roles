@@ -3,7 +3,7 @@
  * Plugin Name: Restricted Block by User Roles
  * Plugin URI: https://github.com/ddryo/Restricted-Block-by-User-Roles
  * Description: This plugin can use a custom block to display content only to logged-in users belonging to the specified permission group.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: LOOS WEB STUDIO
  * Author URI: https://loos-web-studio.com/
  * License: GPL2 or later
@@ -11,7 +11,7 @@
  * Text Domain: loos-restricted-block
  */
 
-if( !defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * 翻訳用のテキストドメインを定義
@@ -45,7 +45,6 @@ add_filter( 'block_categories', function( $categories, $post ) {
             'title' => __('With restrictions', LOOS_RB_DOMAIN),   //ブロックカテゴリーの表示名
         ]
     ];
-    
     return array_merge( $categories, $my_category );
 }, 10, 2 );
 
