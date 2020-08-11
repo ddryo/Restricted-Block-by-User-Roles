@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "restricted-block",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,18 +7,26 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "wp-scripts start",
     "build": "wp-scripts build",
-    "po2json": "po2json languages/loos-restricted-block-ja.po languages/loos-restricted-block-ja-loos-rb-script.json -f jed"
+    "po2json": "po2json -f jed languages/loos-restricted-block-ja.po languages/loos-restricted-block-ja-loos-rb-script.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ddryo@github.com/ddryo/Restricted-Block-by-User-Roles.git"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@wordpress/scripts": "^5.1.0",
-    "classnames": "^2.2.6",
-    "css-loader": "^3.3.2",
-    "node-sass": "^4.13.0",
-    "po2json": "^1.0.0-alpha",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.1"
+  "bugs": {
+    "url": "https://github.com/ddryo/Restricted-Block-by-User-Roles/issues"
   },
-  "dependencies": {}
+  "homepage": "https://github.com/ddryo/Restricted-Block-by-User-Roles#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^12.1.1",
+    "classnames": "^2.2.6",
+    "css-loader": "^4.2.1",
+    "node-sass": "^4.14.1",
+    "po2json": "^1.0.0-beta-3",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "stylelint-config-rational-order": "^0.1.2"
+  }
 }

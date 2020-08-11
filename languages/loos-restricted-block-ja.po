@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Restricted Block by User Roles\n"
-"POT-Creation-Date: 2019-12-13 12:02+0900\n"
-"PO-Revision-Date: 2019-12-13 12:04+0900\n"
+"POT-Creation-Date: 2020-08-12 04:18+0900\n"
+"PO-Revision-Date: 2020-08-12 04:18+0900\n"
 "Last-Translator: \n"
 "Language-Team: LOOS WEB STUDIO\n"
 "Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -22,49 +22,53 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
-#: restricted-block.php:61
-msgid "With restrictions"
-msgstr "制限付き"
+#: src/restricted-block/_panels.js:34
+msgid "Display restrictions"
+msgstr "表示の制限"
 
-#: src/restricted-block/_panels.js:25
-msgid "User Roles"
-msgstr "権限グループ"
+#: src/restricted-block/_panels.js:38
+msgid "Who can see this content"
+msgstr "このコンテンツを見ることのできるユーザー"
 
-#: src/restricted-block/_panels.js:26
-msgid "Roles to view this content"
-msgstr "このコンテンツを見ることのできる権限グループ"
+#: src/restricted-block/_panels.js:41
+msgid "Non-logged-in User"
+msgstr "非ログインユーザー"
 
-#: src/restricted-block/_panels.js:28
+#: src/restricted-block/_panels.js:49
 msgid "administrator"
 msgstr "管理者"
 
-#: src/restricted-block/_panels.js:33
+#: src/restricted-block/_panels.js:56
 msgid "editor"
 msgstr "編集者"
 
-#: src/restricted-block/_panels.js:38
+#: src/restricted-block/_panels.js:61
 msgid "author"
 msgstr "投稿者"
 
-#: src/restricted-block/_panels.js:43
+#: src/restricted-block/_panels.js:66
 msgid "contributor"
 msgstr "寄稿者"
 
-#: src/restricted-block/_panels.js:48
+#: src/restricted-block/_panels.js:73
 msgid "subscriber"
 msgstr "購読者"
 
-#: src/restricted-block/index.js:31
+#: src/restricted-block/index.js:32
 msgid "Restricted Block"
 msgstr "ユーザー制限ブロック"
+
+#: restricted-block.php:61
+msgid "With restrictions"
+msgstr "制限付き"
 
 #. Plugin Name of the plugin/theme
 msgid "Restricted Block by User Roles"
 msgstr "Restricted Block by User Roles"
 
 #. Plugin URI of the plugin/theme
-msgid "https://wemo.tech/"
-msgstr "https://wemo.tech/"
+msgid "https://github.com/ddryo/Restricted-Block-by-User-Roles"
+msgstr "https://github.com/ddryo/Restricted-Block-by-User-Roles"
 
 #. Description of the plugin/theme
 msgid ""
@@ -81,6 +85,12 @@ msgstr "LOOS WEB STUDIO"
 #. Author URI of the plugin/theme
 msgid "https://loos-web-studio.com/"
 msgstr "https://loos-web-studio.com/"
+
+#~ msgid "User Roles"
+#~ msgstr "権限グループ"
+
+#~ msgid "https://wemo.tech/"
+#~ msgstr "https://wemo.tech/"
 
 #~ msgid "hoge"
 #~ msgstr "ほげ"
