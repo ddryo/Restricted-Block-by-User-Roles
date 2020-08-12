@@ -22,56 +22,23 @@ import RestrictedBlockPanels from './_panels';
 import './inline.scss';
 
 /**
- * text domain
+ * metadata
  */
-const textDomain = 'loos-restricted-block';
+import metadata from './block.json';
 
 /**
  * Block
  */
 registerBlockType( 'loos-rb/restricted-block', {
-	title: __( 'Restricted Block', textDomain ),
+	title: __( 'Restricted Block', 'loos-restricted-block' ),
 	icon: {
 		foreground: '#fac44f',
 		src: icon,
 	},
-	keywords: [ 'restricted', 'user', 'role' ],
-	category: 'loos-rb-category',
-	supports: {
-		className: false,
-		html: false,
-	},
-	attributes: {
-		administrator: {
-			type: 'boolean',
-			default: true,
-		},
-		editor: {
-			type: 'boolean',
-			default: true,
-		},
-		author: {
-			type: 'boolean',
-			default: true,
-		},
-		contributor: {
-			type: 'boolean',
-			default: true,
-		},
-		subscriber: {
-			type: 'boolean',
-			default: true,
-		},
-		nonLoggedin: {
-			type: 'boolean',
-			default: false,
-		},
-		userID: {
-			type: 'number',
-			default: 0,
-		},
-	},
-
+	keywords: metadata.keywords,
+	category: metadata.category,
+	supports: metadata.supports,
+	attributes: metadata.attributes,
 	edit: ( props ) => {
 		// const { className } = props;
 		// const blockClass = classnames( 'loos-block-restricted', className );

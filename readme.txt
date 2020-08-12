@@ -4,7 +4,7 @@ Donate link: https://wemo.tech/
 Tags: restrict, User Roles, Roles, block, editor, guternberg, gutenberg blocks
 Requires at least: 5.0
 Tested up to: 5.5
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -45,6 +45,9 @@ This plugin can be installed directly from your site.
 
 
 == Changelog ==
+
+= 1.0.3 =
+- Create block.json
 
 = 1.0.2 =
 - Support for WordPress 5.5

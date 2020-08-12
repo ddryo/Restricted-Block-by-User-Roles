@@ -3,7 +3,7 @@
  * Plugin Name: Restricted Block by User Roles
  * Plugin URI: https://github.com/ddryo/Restricted-Block-by-User-Roles
  * Description: This plugin can use a custom block to display content only to logged-in users belonging to the specified permission group.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: LOOS, Inc.
  * Author URI: https://loos-web-studio.com/
  * License: GPL2 or later
@@ -35,7 +35,7 @@ add_action( 'plugins_loaded', function() {
 	 * 翻訳ファイルの読み込み
 	 */
 	 $locale = apply_filters( 'plugin_locale', determine_locale(), LOOS_RB_DOMAIN );
-	load_textdomain( LOOS_RB_DOMAIN, LOOS_RB_PATH . 'languages/loos-restricted-block-' . $locale . '.mo');
+	load_textdomain( LOOS_RB_DOMAIN, LOOS_RB_PATH . 'languages/loos-restricted-block-' . $locale . '.mo' );
 
 	/**
 	 * ブロックカテゴリ追加
@@ -64,81 +64,58 @@ add_action( 'init', function() {
 		'loos-rb-script',
 		plugins_url( 'build/index.js', __FILE__ ),
 		$asset_file['dependencies'],
-		$asset_file['version']
+		$asset_file['version'],
+		true
 	);
 
 	// ダイナミックブロックとして登録
 	if ( function_exists('register_block_type') ) {
+
+		// $metadata     = json_decode( file_get_contents( __DIR__ . '/src/user-profile/block.json' ), true );
+		$metadata = json_decode( file_get_contents( LOOS_RB_PATH . 'src/restricted-block/block.json' ), true );
+
 		register_block_type(
 			'loos-rb/restricted-block',
-			[
-				'editor_script' => 'loos-rb-script',
-				'attributes' => [
-					//JS側と合わせないと「ブロック読み込みエラー: 無効なパラメーター: attributes」が出たりする
-					'administrator' => [
-						'type'    => 'boolean',
-						'default' => true,
-					],
-					'editor' => [
-						'type'    => 'boolean',
-						'default' => true,
-					],
-					'author' => [
-						'type'    => 'boolean',
-						'default' => true,
-					],
-					'contributor' => [
-						'type'    => 'boolean',
-						'default' => true,
-					],
-					'subscriber' => [
-						'type'    => 'boolean',
-						'default' => true,
-					],
-					'nonLoggedin' => [
-						'type'    => 'boolean',
-						'default' => false,
-					],
-					'userID' => [
-						'type'    => 'number',
-						'default' => 0,
-					],
-				],
-				'render_callback' => function( $attributes, $content ) {
+			array_merge(
+				$metadata,
+				[
+					'editor_script'   => 'loos-rb-script',
+					'render_callback' => function( $attributes, $content ) {
 
-					if ( $attributes[ 'nonLoggedin' ] ) {
+						if ( $attributes[ 'nonLoggedin' ] ) {
 
-						if ( is_user_logged_in() ) return '';
-						return $content;
+							if ( is_user_logged_in() ) return '';
+							return $content;
 
-					} else {
+						} else {
 
-						if ( ! is_user_logged_in() ) return '';
+							if ( ! is_user_logged_in() ) return '';
 
-						$isShow = false;
+							$isShow = false;
 
-						// $current_user = wp_get_current_user();
-						// $userID = $current_user->ID;
+							// $current_user = wp_get_current_user();
+							// $userID = $current_user->ID;
 
-						foreach ( [
-							'administrator',
-							'editor',
-							'author',
-							'contributor',
-							'subscriber'
-						] as $role ) {
-							if ( $attributes[ $role ] && current_user_can( $role ) ) {
-								$isShow = true;
+							foreach ( [
+								'administrator',
+								'editor',
+								'author',
+								'contributor',
+								'subscriber'
+							] as $role ) {
+								if ( $attributes[ $role ] && current_user_can( $role ) ) {
+									$isShow = true;
+								}
 							}
+
+							if ( ! $isShow ) return '';
+
+							return $content;
 						}
 
-						if ( ! $isShow ) return '';
-
-						return $content;
-					}
-
-				},
-			]
+					},
+				]
+			)
 		);
 	}
 
@@ -153,6 +130,4 @@ add_action( 'init', function() {
 
 } );
 
-add_action( 'enqueue_block_editor_assets', function() {
-
-} );
+// add_action( 'enqueue_block_editor_assets', function() {} );

@@ -1,0 +1,46 @@
+{
+    "name": "loos-rb/restricted-block",
+    "title": "Restricted Block",
+    "category": "loos-rb-category",
+    "keywords": [
+        "restricted",
+        "user",
+        "role"
+    ],
+    "supports": {
+        "className": false,
+        "html": false
+    },
+    "attributes": {
+        "administrator": {
+            "type": "boolean",
+            "default": true
+        },
+        "editor": {
+            "type": "boolean",
+            "default": true
+        },
+        "author": {
+            "type": "boolean",
+            "default": true
+        },
+        "contributor": {
+            "type": "boolean",
+            "default": true
+        },
+        "subscriber": {
+            "type": "boolean",
+            "default": true
+        },
+        "nonLoggedin": {
+            "type": "boolean",
+            "default": false
+        },
+        "userID": {
+            "type": "number",
+            "default": 0
+        }
+    },
+    "editorScript": "file:../../build/index.js",
+    "textdomain": "loos-restricted-block"
+}
