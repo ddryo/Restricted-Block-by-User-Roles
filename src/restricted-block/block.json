@@ -5,7 +5,9 @@
     "keywords": [
         "restricted",
         "user",
-        "role"
+        "role",
+        "login",
+        "loos"
     ],
     "supports": {
         "className": false,
