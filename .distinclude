@@ -1,0 +1,17 @@
+/.wordpress-org
+/.git
+/.github
+/node_modules
+/bin
+
+.distignore
+.gitignore
+.eslintignore
+.eslintrc.js
+.prettierrc.js
+.stylelintrc.js
+gulpfile.js
+package.json
+package-lock.json
+webpack.config.js
+README.md
