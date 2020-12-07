@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Restricted Block by User Roles
  * Plugin URI: https://github.com/ddryo/Restricted-Block-by-User-Roles
- * Description: This plugin can use a custom block to display content only to logged-in users belonging to the specified permission group.
- * Version: 1.0.7
+ * Description: Enables blocks that can be shown / hidden for each user role.
+ * Version: 1.1.0
  * Author: LOOS,Inc.
  * Author URI: https://loos-web-studio.com/
  * License: GPL2 or later
@@ -23,28 +23,27 @@ define( 'LOOS_RB_DOMAIN', 'loos-restricted-block' );
  * プラグインディレクトリまでのパス
  */
 define( 'LOOS_RB_PATH', plugin_dir_path( __FILE__ ) );
+define( 'LOOS_RB_URL', plugins_url( '/', __FILE__ ) );
 
 
 /**
- * 翻訳ファイルを登録
+ * plugins_loaded
  */
-
 add_action( 'plugins_loaded', function() {
 
-	/**
-	 * 翻訳ファイルの読み込み
-	 */
-	$locale = apply_filters( 'plugin_locale', determine_locale(), LOOS_RB_DOMAIN );
-	load_textdomain( LOOS_RB_DOMAIN, LOOS_RB_PATH . 'languages/loos-restricted-block-' . $locale . '.mo' );
+	// 翻訳ファイルの読み込み
+	if ( 'ja' === determine_locale() ) {
+		load_textdomain( LOOS_RB_DOMAIN, LOOS_RB_PATH . 'languages/loos-restricted-block-ja.mo' );
+	} else {
+		load_plugin_textdomain( 'loos-restricted-block' );
+	}
 
-	/**
-	 * ブロックカテゴリ追加
-	 */
+	// ブロックカテゴリ追加
 	add_filter( 'block_categories', function( $categories, $post ) {
 		$my_category = [
 			[
-				'slug' => 'loos-rb-category',  //ブロックカテゴリーのスラッグ
-				'title' => __( 'With restrictions', LOOS_RB_DOMAIN ),   //ブロックカテゴリーの表示名
+				'slug'  => 'loos-rb-category',  //ブロックカテゴリーのスラッグ
+				'title' => __( 'With restrictions', LOOS_RB_DOMAIN ),  //ブロックカテゴリーの表示名
 			]
 		];
 		return array_merge( $categories, $my_category );
@@ -57,29 +56,30 @@ add_action( 'plugins_loaded', function() {
  */
 add_action( 'init', function() {
 
-	$asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
+	$asset_file = include( LOOS_RB_PATH . 'build/index.asset.php');
 	
+	// block用スタイルの登録
+	wp_register_style( 'loos-rb-style', LOOS_RB_URL . 'build/index.css', [], $asset_file['version'] );
+
 	// block用スクリプトの登録
-	wp_register_script(
-		'loos-rb-script',
-		plugins_url( 'build/index.js', __FILE__ ),
-		$asset_file['dependencies'],
-		$asset_file['version'],
-		true
-	);
+	wp_register_script( 'loos-rb-script', LOOS_RB_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
+
+	// JS用翻訳ファイルの紐付け
+	if ( function_exists( 'wp_set_script_translations' ) ) {
+		wp_set_script_translations( 'loos-rb-script', LOOS_RB_DOMAIN, LOOS_RB_PATH . 'languages' );
+	}
 
 	// ダイナミックブロックとして登録
 	if ( function_exists('register_block_type') ) {
 
-		// $metadata     = json_decode( file_get_contents( __DIR__ . '/src/user-profile/block.json' ), true );
-		$metadata = json_decode( file_get_contents( LOOS_RB_PATH . 'src/restricted-block/block.json' ), true );
+		$metadata = json_decode( file_get_contents( LOOS_RB_PATH . 'src/block.json' ), true );
 
-		register_block_type(
-			'loos-rb/restricted-block',
+		register_block_type( 'loos-rb/restricted-block',
 			array_merge(
 				$metadata,
 				[
 					'editor_script'   => 'loos-rb-script',
+					'editor_style'    => 'loos-rb-style',
 					'render_callback' => function( $attributes, $content ) {
 
 						if ( $attributes[ 'nonLoggedin' ] ) {
@@ -118,16 +118,4 @@ add_action( 'init', function() {
 			)
 		);
 	}
-
-	// JS用翻訳ファイルの読み込み
-	if ( function_exists( 'wp_set_script_translations' ) ) {
-		wp_set_script_translations(
-			'loos-rb-script',
-			LOOS_RB_DOMAIN,
-			LOOS_RB_PATH . 'languages'
-		);
-	}
-
 } );
-
-// add_action( 'enqueue_block_editor_assets', function() {} );

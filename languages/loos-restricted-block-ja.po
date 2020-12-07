@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Restricted Block by User Roles\n"
-"POT-Creation-Date: 2020-08-12 04:18+0900\n"
-"PO-Revision-Date: 2020-08-12 04:18+0900\n"
+"POT-Creation-Date: 2020-12-07 11:55+0900\n"
+"PO-Revision-Date: 2020-12-07 12:02+0900\n"
 "Last-Translator: \n"
 "Language-Team: LOOS WEB STUDIO\n"
 "Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -22,43 +22,43 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
-#: src/restricted-block/_panels.js:34
+#: src/index.js:41
 msgid "Display restrictions"
 msgstr "表示の制限"
 
-#: src/restricted-block/_panels.js:38
+#: src/index.js:45
 msgid "Who can see this content"
-msgstr "このコンテンツを見ることのできるユーザー"
+msgstr "コンテンツを見ることのできるユーザー"
 
-#: src/restricted-block/_panels.js:41
+#: src/index.js:48
 msgid "Non-logged-in User"
 msgstr "非ログインユーザー"
 
-#: src/restricted-block/_panels.js:49
+#: src/index.js:54
 msgid "administrator"
 msgstr "管理者"
 
-#: src/restricted-block/_panels.js:56
+#: src/index.js:59
 msgid "editor"
 msgstr "編集者"
 
-#: src/restricted-block/_panels.js:61
+#: src/index.js:64
 msgid "author"
 msgstr "投稿者"
 
-#: src/restricted-block/_panels.js:66
+#: src/index.js:69
 msgid "contributor"
 msgstr "寄稿者"
 
-#: src/restricted-block/_panels.js:73
+#: src/index.js:74
 msgid "subscriber"
 msgstr "購読者"
 
-#: src/restricted-block/index.js:32
+#: src/index.js:88
 msgid "Restricted Block"
 msgstr "ユーザー制限ブロック"
 
-#: restricted-block.php:61
+#: restricted-block.php:46
 msgid "With restrictions"
 msgstr "制限付き"
 
@@ -71,20 +71,28 @@ msgid "https://github.com/ddryo/Restricted-Block-by-User-Roles"
 msgstr "https://github.com/ddryo/Restricted-Block-by-User-Roles"
 
 #. Description of the plugin/theme
-msgid ""
-"This plugin can use a custom block to display content only to logged-in "
-"users belonging to the specified permission group."
+msgid "Enables blocks that can be shown / hidden for each user role."
 msgstr ""
-"指定した権限グループに属するログイン中のユーザーにのみコンテンツを表示する"
-"ためのカスタムブロックが利用できるプラグインです。"
+"ユーザーの権限ごとに表示・非表示を切り替えることができるブロックを使用可能に"
+"します。"
 
 #. Author of the plugin/theme
-msgid "LOOS WEB STUDIO"
-msgstr "LOOS WEB STUDIO"
+msgid "LOOS,Inc."
+msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://loos-web-studio.com/"
 msgstr "https://loos-web-studio.com/"
+
+#~ msgid ""
+#~ "This plugin can use a custom block to display content only to logged-in "
+#~ "users belonging to the specified permission group."
+#~ msgstr ""
+#~ "指定した権限グループに属するログイン中のユーザーにのみコンテンツを表示す"
+#~ "るためのカスタムブロックが利用できるプラグインです。"
+
+#~ msgid "LOOS WEB STUDIO"
+#~ msgstr "LOOS WEB STUDIO"
 
 #~ msgid "User Roles"
 #~ msgstr "権限グループ"
