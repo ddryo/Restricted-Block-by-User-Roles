@@ -3,7 +3,7 @@
  * Plugin Name: Restricted Block by User Roles
  * Plugin URI: https://github.com/ddryo/Restricted-Block-by-User-Roles
  * Description: Enables blocks that can be shown / hidden for each user role.
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: LOOS,Inc.
  * Author URI: https://loos-web-studio.com/
  * License: GPL2 or later
@@ -12,11 +12,6 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
-
-/**
- * 翻訳用のテキストドメインを定義
- */
-define( 'LOOS_RB_DOMAIN', 'loos-restricted-block' );
 
 
 /**
@@ -33,20 +28,32 @@ add_action( 'plugins_loaded', function() {
 
 	// 翻訳ファイルの読み込み
 	if ( 'ja' === determine_locale() ) {
-		load_textdomain( LOOS_RB_DOMAIN, LOOS_RB_PATH . 'languages/loos-restricted-block-ja.mo' );
+		load_textdomain( 'loos-restricted-block', LOOS_RB_PATH . 'languages/loos-restricted-block-ja.mo' );
 	} else {
 		load_plugin_textdomain( 'loos-restricted-block' );
 	}
 
 	// ブロックカテゴリ追加
-	add_filter( 'block_categories', function( $categories, $post ) {
+	global $wp_version;
+	$hookname = ( version_compare( $wp_version, '5.8-beta' ) >= 0 ) ? 'block_categories_all' : 'block_categories';
+	add_filter( $hookname, function( $categories, $post ) {
 		$my_category = [
 			[
-				'slug'  => 'loos-rb-category',  //ブロックカテゴリーのスラッグ
-				'title' => __( 'With restrictions', LOOS_RB_DOMAIN ),  //ブロックカテゴリーの表示名
+				'slug'  => 'loos-rb-category',
+				'title' => __( 'With restrictions', 'loos-restricted-block' ),
+				'icon'  => null,
 			]
 		];
-		return array_merge( $categories, $my_category );
+
+		// ウィジェットの前にカテゴリーを追加する
+		foreach ( $categories as $index => $data ) {
+			$slug = $data['slug'] ?? '';
+			if ( 'embed' === $slug ) {
+				array_splice( $categories, $index, 0, $my_category );
+				break;
+			}
+		}
+		return $categories;
 	}, 10, 2 );
 } );
 
@@ -66,7 +73,7 @@ add_action( 'init', function() {
 
 	// JS用翻訳ファイルの紐付け
 	if ( function_exists( 'wp_set_script_translations' ) ) {
-		wp_set_script_translations( 'loos-rb-script', LOOS_RB_DOMAIN, LOOS_RB_PATH . 'languages' );
+		wp_set_script_translations( 'loos-rb-script', 'loos-restricted-block', LOOS_RB_PATH . 'languages' );
 	}
 
 	// ダイナミックブロックとして登録

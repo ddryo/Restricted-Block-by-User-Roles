@@ -2,9 +2,9 @@
 Contributors: looswebstudio
 Donate link: https://wemo.tech/
 Tags: restrict, User Roles, roles, block, editor, guternberg
-Requires at least: 5.5
-Tested up to: 5.6
-Stable tag: 1.1.0
+Requires at least: 5.6
+Tested up to: 5.8
+Stable tag: 1.2.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -48,10 +48,12 @@ This plugin can be installed directly from your site.
 
 == Changelog ==
 
+= 1.2.0 =
+- Support for WordPress 5.8.
+
 = 1.1.0 =
 - Support for WordPress 5.6
 - The icon has been renewed.
-
 
 = 1.0.7 =
 = 1.0.6 =
