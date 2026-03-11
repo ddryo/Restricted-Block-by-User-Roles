@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/ddryo/Restricted-Block-by-User-Roles#readme",
   "devDependencies": {
-    "@wordpress/scripts": "^12.5.0",
+    "@wordpress/scripts": "^31.6.0",
     "classnames": "^2.2.6",
     "po2json": "^1.0.0-beta-3",
     "stylelint-config-rational-order": "^0.1.2"
